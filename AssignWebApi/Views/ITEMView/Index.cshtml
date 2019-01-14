@@ -1,0 +1,46 @@
+﻿@model IEnumerable<AssignWebApi.Models.ITEMViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ITDESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ITRATE)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITDESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ITRATE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ITCODE.Trim() }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ITCODE.Trim() }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ITCODE.Trim() })
+            </td>
+        </tr>
+    }
+
+</table>
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}

@@ -1,0 +1,43 @@
+﻿@model AssignWebApi.Models.PODETAILViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PODETAILViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ITEM.ITDESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITEM.ITDESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.POMASTER.SUPLNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POMASTER.SUPLNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PONO.Trim(), itemId = Model.ITCODE.Trim() }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

@@ -1,0 +1,40 @@
+﻿@model AssignWebApi.Models.ITEMViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ITEM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ITDESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITDESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ITRATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ITRATE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ITCODE.Trim() }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
